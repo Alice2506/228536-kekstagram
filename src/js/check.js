@@ -12,16 +12,22 @@ function getMessage(a, b) {
 
   }
 
-  if (Array.isArray([a]) = true) {
+  if (Array.isArray(a)) {
 
     return ('Количество красных точек во всех строках изображения: [amountOfRedPoints]');
 
   }
 
-  if (Array.isArray([a, b]) = true) {
+  if (Array.isArray(a, b)) {
 
     return ('Количество красных точек во всех строках изображения: [amountOfRedPoints]');
 
+  }
+
+  else {
+
+    return ('Переданы некорректные данные');
+    
   }
 }
 
