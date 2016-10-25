@@ -32,3 +32,21 @@ function getMessageForGif(a, b) {
 function getMessageForSvg(a, b) {
   return 'Переданное сообщение содержит ' + a + ' объектов и ' + b * 4 + ' атрибутов';
 }
+
+var arr = [];
+var amountOfRedPoints = function(a) {
+  var result = 0;
+  for (var i = 0; i < arr.length; i++) {
+    resultForAmount = result + arr[i];
+  }
+
+  return resultForAmount;
+};
+
+var artifactsSquare = function (a, b) {
+  var result = a[i] * b[i];
+  for (var i = 0; i < arr.length; i++) {
+  resultForArtifacts = result + a[i] * b[i];
+}
+return resultForArtifacts;
+}
