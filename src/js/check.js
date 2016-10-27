@@ -7,7 +7,7 @@ function getMessage(a, b) {
     return getMessageForSvg(a, b);
   }
 
-  if (Array.isArray(a)) {
+  if (Array.isArray(a)) && typeof b === 'boolean' || 'number' {
     return 'Количество красных точек во всех строках изображения: ' + amountOfRedPoints(a, b);
   }
 
@@ -33,7 +33,6 @@ function getMessageForSvg(a, b) {
   return 'Переданное сообщение содержит ' + a + ' объектов и ' + b * 4 + ' атрибутов';
 }
 
-var arr = [];
 var amountOfRedPoints = function(a) {
   var result = 0;
   for (var i = 0; i < arr.length; i++) {
@@ -44,7 +43,7 @@ var amountOfRedPoints = function(a) {
 };
 
 var artifactsSquare = function (a, b) {
-  var result = a[i] * b[i];
+  var result = 0;
   for (var i = 0; i < arr.length; i++) {
   resultForArtifacts = result + a[i] * b[i];
 }
