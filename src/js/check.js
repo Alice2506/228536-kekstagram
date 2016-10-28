@@ -7,7 +7,7 @@ function getMessage(a, b) {
     return getMessageForSvg(a, b);
   }
 
-  if (Array.isArray(a)) && typeof b === 'boolean' || 'number' {
+  if (Array.isArray(a) && !Array.isArray(b)) {
     return 'Количество красных точек во всех строках изображения: ' + amountOfRedPoints(a, b);
   }
 
@@ -18,7 +18,7 @@ function getMessage(a, b) {
   else {
     return 'Переданы некорректные данные';
   }
-}
+};
 
 function getMessageForGif(a, b) {
   if (a === true) {
@@ -27,11 +27,11 @@ function getMessageForGif(a, b) {
   } else {
     return 'Переданное GIF-изображение не анимировано';
   }
-}
+};
 
 function getMessageForSvg(a, b) {
   return 'Переданное сообщение содержит ' + a + ' объектов и ' + b * 4 + ' атрибутов';
-}
+};
 
 var amountOfRedPoints = function(a) {
   var result = 0;
@@ -42,10 +42,10 @@ var amountOfRedPoints = function(a) {
   return resultForAmount;
 };
 
-var artifactsSquare = function (a, b) {
+var artifactsSquare = function(a, b) {
   var result = 0;
   for (var i = 0; i < arr.length; i++) {
-  resultForArtifacts = result + a[i] * b[i];
+  result = result + a[i] * b[i];
 }
-return resultForArtifacts;
+return result;
 }
