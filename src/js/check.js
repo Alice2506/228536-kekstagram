@@ -7,13 +7,13 @@ window.getMessage = function(a, b) {
     return getMessageForSvg(a, b);
   }
 
-  if (Array.isArray(a) && !Array.isArray(b)) {
+  if (Array.isArray(a)) {
+    if (Array.isArray(b)) {
+    return 'Общая площадь артефактов сжатия: ' + artifactsSquare(a, b) + ' пикселей';
+  } else {
     return 'Количество красных точек во всех строках изображения: ' + amountOfRedPoints(a, b);
   }
-
-  if (Array.isArray(a) && Array.isArray(b)) {
-    return 'Общая площадь артефактов сжатия: ' + artifactsSquare(a, b) + ' пикселей';
-  }
+}
 
   else {
     return 'Переданы некорректные данные';
@@ -35,8 +35,8 @@ function getMessageForSvg(a, b) {
 
 var amountOfRedPoints = function(a) {
   var result = 0;
-  for (var i = 0; i < arr.length; i++) {
-    resultForAmount = result + arr[i];
+  for (var i = 0; i < a.length; i++) {
+    result = result + arr[i];
   }
 
   return resultForAmount;
@@ -44,7 +44,7 @@ var amountOfRedPoints = function(a) {
 
 var artifactsSquare = function(a, b) {
   var result = 0;
-  for (var i = 0; i < arr.length; i++) {
+  for (var i = 0; i < a.length; i++) {
   result = result + a[i] * b[i];
 }
 return result;
