@@ -98,6 +98,12 @@
       // Смещение первого штриха от начала линии.
       this._ctx.lineDashOffset = 7;
 
+      // Отрисовка темного прозрачного фона вокруг пунктирной линии.
+      this._ctx.fillStyle = 'rgba(0, 0, 0, 0.8)';
+      this._ctx.fillRect (0, 0, 350, 30);
+      this._ctx.fillStyle = 'rgba(0, 0, 0, 0.8)';
+      this._ctx.fillRect (30, 0, 30, 350);
+
       // Сохранение состояния канваса.
       this._ctx.save();
 
