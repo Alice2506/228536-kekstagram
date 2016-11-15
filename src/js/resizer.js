@@ -141,6 +141,16 @@
           (this._container.width - this._container.width * INITIAL_SIDE_RATIO) / 2,
           this._container.height
           );
+      this._ctx.fillStyle = 'rgba(0, 0, 0, 0.8)';
+      this._ctx.fillRect (
+        -(this._container.width / 2) + ((this._container.width - this._container.width * INITIAL_SIDE_RATIO) / 2),
+        this._container.height / 2 - this._container.width * INITIAL_SIDE_RATIO,
+        this._container.width * INITIAL_SIDE_RATIO,
+        (this._container.height - this._container.height * INITIAL_SIDE_RATIO) / 2
+      )
+
+      // Вывод на экран размера изображения
+      this._ctx.fillText (this._image.naturalWidth + ' x ' + this._image.naturalHeight, 10, 20)
 
       // Восстановление состояния канваса, которое было до вызова ctx.save
       // и последующего изменения системы координат. Нужно для того, чтобы
