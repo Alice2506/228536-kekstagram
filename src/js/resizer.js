@@ -98,12 +98,6 @@
       // Смещение первого штриха от начала линии.
       this._ctx.lineDashOffset = 7;
 
-      // Отрисовка темного прозрачного фона вокруг пунктирной линии.
-      this._ctx.fillStyle = 'rgba(0, 0, 0, 0.8)';
-      this._ctx.fillRect (0, 0, 350, 30);
-      this._ctx.fillStyle = 'rgba(0, 0, 0, 0.8)';
-      this._ctx.fillRect (30, 0, 30, 350);
-
       // Сохранение состояния канваса.
       this._ctx.save();
 
@@ -124,6 +118,29 @@
           (-this._resizeConstraint.side / 2) - this._ctx.lineWidth / 2,
           this._resizeConstraint.side - this._ctx.lineWidth / 2,
           this._resizeConstraint.side - this._ctx.lineWidth / 2);
+
+     // Отрисовка темного прозрачного фона вокруг пунктирной линии.
+     this._ctx.fillStyle = 'rgba(0, 0, 0, 0.8)';
+     this._ctx.fillRect (
+         -(this._container.width / 2),
+         -(this._container.height / 2),
+         (this._container.width - this._container.width * INITIAL_SIDE_RATIO) / 2,
+         this._container.height
+          );
+     this._ctx.fillStyle = 'rgba(0, 0, 0, 0.8)';
+     this._ctx.fillRect (
+         -(this._container.width / 2) + ((this._container.width - this._container.width * INITIAL_SIDE_RATIO) / 2),
+         -(this._container.height / 2),
+         this._container.width * INITIAL_SIDE_RATIO,
+         (this._container.height - this._container.height * INITIAL_SIDE_RATIO) / 2
+          );
+      this._ctx.fillStyle = 'rgba(0, 0, 0, 0.8)';
+      this._ctx.fillRect (
+          (this._container.width / 2) - ((this._container.width - this._container.width * INITIAL_SIDE_RATIO) / 2),
+          -(this._container.height / 2),
+          (this._container.width - this._container.width * INITIAL_SIDE_RATIO) / 2,
+          this._container.height
+          );
 
       // Восстановление состояния канваса, которое было до вызова ctx.save
       // и последующего изменения системы координат. Нужно для того, чтобы
